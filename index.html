@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Archipelago Charter Service – Privat charterbåt i Stockholms skärgård. Avgår från Strandvägen Kajplats 19 – ett stenkast från Djurgården och Östermalm. Erfaren kapten med 30 års erfarenhet.">
+  <meta name="keywords" content="charterbåt Stockholm, privat båttur Stockholm, skärgårdskryssning, båtcharter Strandvägen, Stockholms skärgård, M/S Astrid, kapten Mikael">
+  <meta name="geo.region" content="SE-AB">
+  <meta name="geo.placename" content="Stockholm">
+  <title>Charterbåt Stockholm | Strandvägen Kajplats 19 — Archipelago Charter Service</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────── */
+    :root {
+      --primary:        #000a1e;
+      --primary-cont:   #002147;
+      --secondary:      #9b4500;
+      --secondary-cont: #fc8a40;
+      --tertiary:       #586bfc;
+      --surface:        #f8f9fa;
+      --surface-low:    #f3f4f5;
+      --surface-lowest: #ffffff;
+      --on-surface:     #0d1b2a;
+      --on-surface-var: #3e4f62;
+
+      --radius-lg:  1rem;
+      --radius-xl:  1.5rem;
+      --radius-pill: 999px;
+
+      --shadow-float: 0 24px 64px rgba(0, 10, 30, 0.14);
+    }
+
+    /* ─────────────────────────────────────────
+       BASE
+    ───────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--surface);
+      color: var(--on-surface);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ─────────────────────────────────────────
+       LANGUAGE TOGGLE — CSS-driven
+    ───────────────────────────────────────── */
+    body[data-lang="sv"] .lang-en { display: none !important; }
+    body[data-lang="en"] .lang-sv { display: none !important; }
+
+    /* ─────────────────────────────────────────
+       NAVIGATION
+    ───────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3.5rem;
+      background: rgba(0, 10, 30, 0.68);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: background 0.3s;
+    }
+
+    .nav.scrolled {
+      background: rgba(0, 10, 30, 0.94);
+    }
+
+    /* Logo sits on a white pill so JPEG background is invisible */
+    .nav-logo {
+      display: block;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 0.625rem;
+      padding: 0.375rem 0.875rem;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img { height: 38px; width: auto; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* Language pill */
+    .lang-pill {
+      display: flex;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-pill);
+      padding: 3px;
+    }
+
+    .lang-pill button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      padding: 0.4rem 0.875rem;
+      border-radius: var(--radius-pill);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-pill button.active {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+    }
+
+    /* Book CTA */
+    .nav-cta {
+      background: var(--secondary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.025em;
+      padding: 0.6875rem 1.625rem;
+      border-radius: var(--radius-pill);
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--secondary-cont);
+      transform: translateY(-1px);
+    }
+
+    /* ─────────────────────────────────────────
+       HERO
+    ───────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 62%;
+      transform: scale(1.04);
+      animation: hero-zoom 18s ease-out forwards;
+    }
+
+    @keyframes hero-zoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.0); }
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        145deg,
+        rgba(0, 10, 30, 0.84) 0%,
+        rgba(0, 33, 71, 0.52) 42%,
+        rgba(0, 10, 30, 0.12) 100%
+      );
+    }
+
+    /* Subtle grain overlay for luxury texture */
+    .hero-scrim::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+    }
+
+    .hero-body {
+      position: relative;
+      z-index: 2;
+      padding: 0 4rem 5.5rem;
+      max-width: 740px;
+      animation: fade-up 1.1s 0.2s both cubic-bezier(0.22, 0.8, 0.38, 1);
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tertiary);
+      margin-bottom: 1.375rem;
+    }
+
+    .hero-h1 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(2.75rem, 5.5vw, 4.75rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.04;
+      margin-bottom: 1.625rem;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--secondary-cont);
+    }
+
+    .hero-p {
+      font-size: 1.0625rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.78;
+      max-width: 510px;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      padding: 1rem 2.25rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 16px 48px rgba(155, 69, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary-cont);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-light {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.78);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--secondary-cont);
+      transition: color 0.2s;
+      padding: 0;
+    }
+
+    .btn-ghost-light:hover { color: #fff; }
+
+    /* ─────────────────────────────────────────
+       STAT STRIP
+    ───────────────────────────────────────── */
+    .stat-strip {
+      background: var(--primary);
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 2.125rem 3.5rem;
+    }
+
+    .stat-val {
+      font-family: 'Noto Serif', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--secondary-cont);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .stat-sep {
+      width: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      align-self: stretch;
+      margin: 1.5rem 0;
+    }
+
+    /* ─────────────────────────────────────────
+       SHARED TYPOGRAPHY
+    ───────────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .tag--light { color: var(--tertiary); }
+
+    .sh2 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(1.875rem, 3vw, 3rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--primary);
+      margin-bottom: 1.625rem;
+    }
+
+    .sh2 em { font-style: italic; color: var(--secondary); }
+    .sh2--light { color: #fff; }
+    .sh2--light em { color: var(--secondary-cont); }
+
+    .sbody {
+      font-size: 1.0625rem;
+      line-height: 1.82;
+      color: var(--on-surface-var);
+      font-weight: 400;
+      max-width: 560px;
+    }
+
+    .sbody--light { color: rgba(255, 255, 255, 0.66); max-width: none; }
+    .sbody--gap { margin-top: 1.25rem; }
+
+    /* ─────────────────────────────────────────
+       ABOUT
+    ───────────────────────────────────────── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+    }
+
+    .about-content {
+      background: var(--surface-lowest);
+      padding: 7.5rem 5.5rem 7.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-photo {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      transition: transform 0.7s ease;
+    }
+
+    .about-photo:hover img { transform: scale(1.03); }
+
+    /* ─────────────────────────────────────────
+       VESSEL SECTION
+    ───────────────────────────────────────── */
+    .vessel {
+      background: var(--surface-low);
+      padding: 8rem 4rem;
+    }
+
+    .vessel-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 55% 1fr;
+      gap: 5.5rem;
+      align-items: center;
+    }
+
+    .vessel-photos {
+      position: relative;
+      padding-bottom: 3.5rem;
+    }
+
+    .vessel-main {
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+    }
+
+    .vessel-accent {
+      position: absolute;
+      bottom: 0;
+      right: -2rem;
+      width: 48%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-float);
+      outline: 5px solid var(--surface-low);
+    }
+
+    .vessel-info {}
+
+    .amenities {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-top: 1.75rem;
+    }
+
+    .amenities li {
+      background: var(--surface-lowest);
+      border-radius: var(--radius-pill);
+      padding: 0.4rem 1rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--on-surface-var);
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.75rem;
+    }
+
+    .spec {
+      background: var(--surface-lowest);
+      border-radius: var(--radius-lg);
+      padding: 1.375rem 1.5rem;
+    }
+
+    .spec-val {
+      display: block;
+      font-family: 'Noto Serif', serif;
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--primary-cont);
+      line-height: 1;
+      margin-bottom: 0.375rem;
+    }
+
+    .spec-key {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    /* ─────────────────────────────────────────
+       GALLERY
+    ───────────────────────────────────────── */
+    .gallery {
+      background: var(--primary-cont);
+      padding: 5.5rem 4rem;
+    }
+
+    .gallery-head {
+      max-width: 1300px;
+      margin: 0 auto 2.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .gallery-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 255px 255px;
+      gap: 0.875rem;
+    }
+
+    .g-item {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+    }
+
+    .g-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .g-item:hover img { transform: scale(1.06); }
+    .g-tall { grid-row: span 2; }
+
+    /* ─────────────────────────────────────────
+       CAPTAIN
+    ───────────────────────────────────────── */
+    .captain {
+      display: grid;
+      grid-template-columns: 38% 1fr;
+      min-height: 580px;
+    }
+
+    .captain-photo {
+      overflow: hidden;
+    }
+
+    .captain-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 12%;
+    }
+
+    .captain-content {
+      background: var(--primary);
+      padding: 6.5rem 5.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .captain-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2.75rem;
+    }
+
+    .captain-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--secondary-cont);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.0625rem;
+      transition: color 0.2s;
+    }
+
+    .captain-links a:hover { color: #fff; }
+
+    .c-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(252, 138, 64, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.0625rem;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       CONTACT / BOOKING
+    ───────────────────────────────────────── */
+    .contact {
+      background: var(--surface-low);
+      padding: 8rem 4rem;
+    }
+
+    .contact-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6.5rem;
+      align-items: start;
+    }
+
+    /* Info card */
+    .info-card {
+      background: var(--primary);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      margin-top: 3rem;
+    }
+
+    .info-card-title {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-card-sub {
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 1.125rem;
+      padding: 1rem 0;
+    }
+
+    .i-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(252, 138, 64, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+
+    .i-lbl {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--tertiary);
+      margin-bottom: 0.2rem;
+    }
+
+    .i-val {
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 500;
+      font-size: 0.9375rem;
+      text-decoration: none;
+    }
+
+    a.i-val:hover { color: var(--secondary-cont); }
+
+    /* Form */
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.125rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.125rem;
+    }
+
+    .fgroup {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .fgroup label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-surface-var);
+    }
+
+    .fgroup input,
+    .fgroup textarea,
+    .fgroup select {
+      background: var(--surface-lowest);
+      border: none;
+      border-radius: var(--radius-lg);
+      padding: 0.9375rem 1.25rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.9375rem;
+      color: var(--on-surface);
+      outline: none;
+      width: 100%;
+      transition: box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .fgroup select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233e4f62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.125rem center;
+      padding-right: 2.5rem;
+    }
+
+    .fgroup input:focus,
+    .fgroup textarea:focus,
+    .fgroup select:focus {
+      box-shadow: 0 0 0 2.5px var(--secondary);
+    }
+
+    .fgroup textarea {
+      min-height: 130px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .btn-submit {
+      align-self: flex-start;
+      background: var(--secondary);
+      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      margin-top: 0.375rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-submit:hover {
+      background: var(--secondary-cont);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────── */
+    footer {
+      background: var(--primary);
+      padding: 2.75rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-logo {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 0.5rem;
+      padding: 0.4rem 0.875rem;
+      line-height: 0;
+    }
+
+    .footer-logo img {
+      height: 30px;
+      filter: invert(1);
+      opacity: 0.55;
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(255, 255, 255, 0.8); }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .vessel-inner {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+      }
+
+      .vessel-accent { right: 0; }
+    }
+
+    @media (max-width: 900px) {
+      .nav { padding: 0.875rem 1.5rem; }
+
+      .hero-body { padding: 0 1.75rem 4rem; }
+
+      .stat-item { padding: 1.5rem 2rem; }
+      .stat-sep { display: none; }
+
+      .about { grid-template-columns: 1fr; }
+      .about-photo { height: 380px; order: -1; }
+      .about-content { padding: 4.5rem 2rem; }
+
+      .vessel { padding: 5rem 1.75rem; }
+
+      .gallery { padding: 4rem 1.5rem; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px 200px;
+      }
+      .g-tall { grid-row: span 1; }
+
+      .captain { grid-template-columns: 1fr; }
+      .captain-photo { height: 360px; }
+      .captain-content { padding: 4rem 2rem; }
+
+      .contact { padding: 5rem 1.75rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-right { gap: 0.75rem; }
+      .hero-h1 { font-size: 2.25rem; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body data-lang="sv">
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <a href="#" class="nav-logo" aria-label="Archipelago Charter Service">
+      <img src="brand_assets/logo.jpg" alt="Archipelago Charter Service">
+    </a>
+    <div class="nav-right">
+      <div class="lang-pill" role="group" aria-label="Välj språk">
+        <button class="active" data-lng="sv" onclick="setLang('sv')" aria-label="Svenska">SV</button>
+        <button data-lng="en" onclick="setLang('en')" aria-label="English">EN</button>
+      </div>
+      <a href="#contact" class="nav-cta">
+        <span class="lang-sv">Boka nu</span>
+        <span class="lang-en">Book now</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="hero" aria-label="Hero">
+    <img
+      class="hero-bg"
+      src="brand_assets/hero.jpg"
+      alt="M/S Astrid förtöjd vid en kobbbe i Stockholms skärgård"
+      loading="eager"
+      fetchpriority="high"
+    >
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-body">
+      <p class="eyebrow">
+        <span class="lang-sv">Strandvägen Kajplats 19, Stockholm &nbsp;·&nbsp; Sedan 2014</span>
+        <span class="lang-en">Strandvägen Pier 19, Stockholm &nbsp;·&nbsp; Est. 2014</span>
+      </p>
+      <h1 class="hero-h1">
+        <span class="lang-sv">Upplev skärgården<br><em>på ditt sätt</em></span>
+        <span class="lang-en">Experience the archipelago<br><em>your way</em></span>
+      </h1>
+      <p class="hero-p">
+        <span class="lang-sv">Privat charterbåt med erfaren kapten — avgår från Strandvägen Kajplats 19, ett stenkast från Djurgården och Östermalm. Skräddarsydda turer i Stockholms skärgård för sällskap, företag och familjer.</span>
+        <span class="lang-en">Private charter boat with an experienced captain — departing from Strandvägen Pier 19, a stone's throw from Djurgården and Östermalm. Tailor-made voyages through Stockholm's archipelago for parties, companies, and families.</span>
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">
+          <span class="lang-sv">Boka en tur</span>
+          <span class="lang-en">Book a trip</span>
+        </a>
+        <button class="btn-ghost-light" onclick="document.getElementById('vessel').scrollIntoView({behavior:'smooth'})">
+          <span class="lang-sv">Läs mer om Astrid</span>
+          <span class="lang-en">Learn more about Astrid</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       STAT STRIP
+  ══════════════════════════════════════════ -->
+  <div class="stat-strip" role="list" aria-label="Fakta om oss">
+    <div class="stat-item" role="listitem">
+      <span class="stat-val">6</span>
+      <span class="stat-lbl">
+        <span class="lang-sv">Passagerare</span>
+        <span class="lang-en">Passengers</span>
+      </span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <span class="stat-val">Minor 34</span>
+      <span class="stat-lbl">
+        <span class="lang-sv">Modell</span>
+        <span class="lang-en">Model</span>
+      </span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <span class="stat-val">32 kn</span>
+      <span class="stat-lbl">
+        <span class="lang-sv">Toppfart</span>
+        <span class="lang-en">Top Speed</span>
+      </span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <span class="stat-val">30+</span>
+      <span class="stat-lbl">
+        <span class="lang-sv">Års erfarenhet</span>
+        <span class="lang-en">Years exp.</span>
+      </span>
+    </div>
+    <div class="stat-sep" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <span class="stat-val">24/7</span>
+      <span class="stat-lbl">
+        <span class="lang-sv">Support</span>
+        <span class="lang-en">Support</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════ -->
+  <article class="about" id="about">
+    <div class="about-content">
+      <span class="tag">
+        <span class="lang-sv">Om oss</span>
+        <span class="lang-en">About us</span>
+      </span>
+      <h2 class="sh2">
+        <span class="lang-sv">Din guide till <em>Stockholms skärgård</em></span>
+        <span class="lang-en">Your guide to <em>Stockholm's Archipelago</em></span>
+      </h2>
+      <p class="sbody lang-sv">
+        Upplev Stockholm från vattnet och den vackra skärgården ombord på <em>M/S Astrid</em>. Ni och era vänner lovas en minnesvärd stund till sjöss — upplev utsikten över Stockholm från vattensidan och förstå varför staden kallas "Nordens Venedig".
+      </p>
+      <p class="sbody lang-en">
+        Discover Stockholm from the water and the beautiful archipelago aboard <em>M/S Astrid</em>. We promise you and your friends a wonderful time on board — experience the view of Stockholm from the waterside and understand why the city is called "The Venice of the North".
+      </p>
+      <p class="sbody sbody--gap lang-sv">
+        Kapten Mikael tar er med på en skräddarsydd tur anpassad efter era önskemål, oavsett om det gäller ett företagsevent, en bröllopsresa eller en avkopplande dagsutflykt.
+      </p>
+      <p class="sbody sbody--gap lang-en">
+        Captain Mikael takes you on a tailor-made trip suited to your wishes, whether it's a corporate event, a wedding trip, or a relaxing day out on the water.
+      </p>
+    </div>
+    <div class="about-photo">
+      <img src="brand_assets/salon.jpg" alt="M/S Astrid salong med utsikt över skärgården i solnedgång" loading="lazy">
+    </div>
+  </article>
+
+  <!-- ══════════════════════════════════════════
+       VESSEL
+  ══════════════════════════════════════════ -->
+  <section class="vessel" id="vessel">
+    <div class="vessel-inner">
+      <div class="vessel-photos">
+        <img class="vessel-main" src="brand_assets/helm.jpg" alt="Förarplatsen ombord M/S Astrid med utsikt över skärgården" loading="lazy">
+        <img class="vessel-accent" src="brand_assets/aftdeck.jpg" alt="Akterdäck med teakträ" loading="lazy">
+      </div>
+      <div class="vessel-info">
+        <span class="tag">
+          <span class="lang-sv">Fartyget</span>
+          <span class="lang-en">The Vessel</span>
+        </span>
+        <h2 class="sh2">
+          <span class="lang-sv">M/S Astrid<br><em style="white-space:nowrap">Minor 34 WR</em></span>
+          <span class="lang-en">M/S Astrid<br><em style="white-space:nowrap">Minor 34 WR</em></span>
+        </h2>
+        <p class="sbody lang-sv">
+          En pilothouse-båt med walk-around byggd för komfort och prestanda. M/S Astrid är utrustad med Rolls-Royce waterjet, rymlig badplattform och allt ni behöver för en njutbar dag till sjöss i Stockholms skärgård.
+        </p>
+        <p class="sbody lang-en">
+          A pilothouse boat with walk-around built for comfort and performance. M/S Astrid is equipped with Rolls-Royce waterjet propulsion, a spacious bathing platform, and everything you need for a wonderful day on the water in Stockholm's archipelago.
+        </p>
+        <div class="specs">
+          <div class="spec">
+            <span class="spec-val">6 pers</span>
+            <span class="spec-key lang-sv">Max kapacitet</span>
+            <span class="spec-key lang-en">Max Capacity</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">24 kn</span>
+            <span class="spec-key lang-sv">Marschfart (max 32)</span>
+            <span class="spec-key lang-en">Cruise speed (max 32)</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">Rolls-Royce</span>
+            <span class="spec-key lang-sv">Waterjet framdrivning</span>
+            <span class="spec-key lang-en">Waterjet propulsion</span>
+          </div>
+          <div class="spec">
+            <span class="spec-val">WiFi</span>
+            <span class="spec-key lang-sv">Ombord</span>
+            <span class="spec-key lang-en">On board</span>
+          </div>
+        </div>
+        <ul class="amenities">
+          <li>
+            <span class="lang-sv">Badplattform</span>
+            <span class="lang-en">Bathing platform</span>
+          </li>
+          <li>
+            <span class="lang-sv">Dusch &amp; varmvatten</span>
+            <span class="lang-en">Shower &amp; warm water</span>
+          </li>
+          <li>
+            <span class="lang-sv">Toalett</span>
+            <span class="lang-en">Toilet</span>
+          </li>
+          <li>WiFi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       GALLERY
+  ══════════════════════════════════════════ -->
+  <section class="gallery" id="gallery">
+    <div class="gallery-head">
+      <div>
+        <span class="tag tag--light">
+          <span class="lang-sv">Bildgalleri</span>
+          <span class="lang-en">Gallery</span>
+        </span>
+        <h2 class="sh2 sh2--light">
+          <span class="lang-sv">Ombord på <em>Astrid</em></span>
+          <span class="lang-en">Aboard <em>Astrid</em></span>
+        </h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item g-tall">
+        <img src="brand_assets/hero.jpg" alt="M/S Astrid förtöjd vid en skärgårdsö" loading="lazy">
+      </div>
+      <div class="g-item">
+        <img src="brand_assets/salon.jpg" alt="Salong med utsikt mot skärgården" loading="lazy">
+      </div>
+      <div class="g-item">
+        <img src="brand_assets/aftdeck.jpg" alt="Akterdäck i teak" loading="lazy">
+      </div>
+      <div class="g-item">
+        <img src="brand_assets/helm.jpg" alt="Förarplatsen" loading="lazy">
+      </div>
+      <div class="g-item">
+        <img src="brand_assets/captain.jpg" alt="Kapten Mikael vid rodret" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CAPTAIN
+  ══════════════════════════════════════════ -->
+  <article class="captain" id="captain">
+    <div class="captain-photo">
+      <img src="brand_assets/captain.jpg" alt="Kapten Mikael vid rodret" loading="lazy">
+    </div>
+    <div class="captain-content">
+      <span class="tag tag--light">
+        <span class="lang-sv">Er kapten</span>
+        <span class="lang-en">Your captain</span>
+      </span>
+      <h2 class="sh2 sh2--light">Kapten Mikael</h2>
+      <p class="sbody sbody--light lang-sv">
+        Med över 30 års erfarenhet av navigation i Stockholms skärgård ger kapten Mikael er inte bara en säker och bekväm resa — han delar med sig av skärgårdens dolda pärlor, hemliga ankringsplatser och de bästa badklipporna. Varje tur är unik.
+      </p>
+      <p class="sbody sbody--light lang-en">
+        With over 30 years of experience navigating Stockholm's archipelago, Captain Mikael gives you more than just a safe and comfortable journey — he shares the archipelago's hidden gems, secret anchorages, and the best swimming rocks. Every trip is unique.
+      </p>
+      <div class="captain-links">
+        <a href="tel:+46708774771">
+          <span class="c-icon" aria-hidden="true">📞</span>
+          +46 708 774 771
+        </a>
+        <a href="mailto:Mikael@onsea.se">
+          <span class="c-icon" aria-hidden="true">✉️</span>
+          Mikael@onsea.se
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT / BOOKING
+  ══════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+
+      <!-- Left column: intro + contact card -->
+      <div>
+        <span class="tag">
+          <span class="lang-sv">Kontakt &amp; Bokning</span>
+          <span class="lang-en">Contact &amp; Booking</span>
+        </span>
+        <h2 class="sh2">
+          <span class="lang-sv">Boka din <em>upplevelse</em></span>
+          <span class="lang-en">Book your <em>experience</em></span>
+        </h2>
+        <p class="sbody lang-sv">
+          Fyll i formuläret så återkommer kapten Mikael med ett skräddarsytt förslag för er tur. Ni kan också kontakta oss direkt per telefon eller e-post.
+        </p>
+        <p class="sbody lang-en">
+          Fill in the form and Captain Mikael will get back to you with a tailored proposal for your trip. You can also reach us directly by phone or email.
+        </p>
+
+        <div class="info-card">
+          <h3 class="info-card-title lang-sv">Kontaktinformation</h3>
+          <h3 class="info-card-title lang-en">Contact Information</h3>
+          <p class="info-card-sub lang-sv">Tillgängliga årets runt för frågor och bokningar.</p>
+          <p class="info-card-sub lang-en">Available year-round for enquiries and bookings.</p>
+
+          <div class="info-row">
+            <div class="i-icon" aria-hidden="true">📞</div>
+            <div>
+              <span class="i-lbl lang-sv">Telefon</span>
+              <span class="i-lbl lang-en">Phone</span>
+              <a href="tel:+46708774771" class="i-val">+46 708 774 771</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="i-icon" aria-hidden="true">✉️</div>
+            <div>
+              <span class="i-lbl lang-sv">E-post</span>
+              <span class="i-lbl lang-en">Email</span>
+              <a href="mailto:Mikael@onsea.se" class="i-val">Mikael@onsea.se</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="i-icon" aria-hidden="true">📍</div>
+            <div>
+              <span class="i-lbl lang-sv">Hemmahamn</span>
+              <span class="i-lbl lang-en">Home Port</span>
+              <span class="i-val">Strandvägen Kajplats 19, Stockholm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: form -->
+      <form class="form" id="booking-form" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="fgroup">
+            <label for="f-first">
+              <span class="lang-sv">Förnamn</span>
+              <span class="lang-en">First name</span>
+            </label>
+            <input id="f-first" type="text" name="firstname" autocomplete="given-name" required>
+          </div>
+          <div class="fgroup">
+            <label for="f-last">
+              <span class="lang-sv">Efternamn</span>
+              <span class="lang-en">Last name</span>
+            </label>
+            <input id="f-last" type="text" name="lastname" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label for="f-email">
+            <span class="lang-sv">E-postadress</span>
+            <span class="lang-en">Email address</span>
+          </label>
+          <input id="f-email" type="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="fgroup">
+          <label for="f-phone">
+            <span class="lang-sv">Telefonnummer</span>
+            <span class="lang-en">Phone number</span>
+          </label>
+          <input id="f-phone" type="tel" name="phone" autocomplete="tel">
+        </div>
+        <div class="form-row">
+          <div class="fgroup">
+            <label for="f-date">
+              <span class="lang-sv">Önskat datum</span>
+              <span class="lang-en">Preferred date</span>
+            </label>
+            <input id="f-date" type="date" name="date">
+          </div>
+          <div class="fgroup">
+            <label for="f-guests">
+              <span class="lang-sv">Antal personer</span>
+              <span class="lang-en">Number of guests</span>
+            </label>
+            <select id="f-guests" name="guests">
+              <option value="1-2">1 – 2</option>
+              <option value="3-4">3 – 4</option>
+              <option value="5-6">5 – 6</option>
+              <option value="7-8">7 – 8</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label for="f-msg">
+            <span class="lang-sv">Meddelande</span>
+            <span class="lang-en">Message</span>
+          </label>
+          <textarea id="f-msg" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submit-btn">
+          <span class="lang-sv">Skicka förfrågan</span>
+          <span class="lang-en">Send enquiry</span>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-logo">
+      <img src="brand_assets/logo.jpg" alt="Archipelago Charter Service">
+    </div>
+    <p class="footer-copy">
+      <span class="lang-sv">© 2025 Archipelago Charter Service. Alla rättigheter förbehållna.</span>
+      <span class="lang-en">© 2025 Archipelago Charter Service. All rights reserved.</span>
+    </p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#">
+        <span class="lang-sv">Integritetspolicy</span>
+        <span class="lang-en">Privacy Policy</span>
+      </a>
+      <a href="#contact">
+        <span class="lang-sv">Kontakt</span>
+        <span class="lang-en">Contact</span>
+      </a>
+    </nav>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+  <script>
+    /* ── Language toggle ── */
+    function setLang(lang) {
+      document.body.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-pill button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lng === lang);
+      });
+    }
+
+    /* ── Nav scroll effect ── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Form submit ── */
+    function handleSubmit(e) {
+      e.preventDefault();
+      const lang = document.body.dataset.lang;
+      const btn = document.getElementById('submit-btn');
+      const origHtml = btn.innerHTML;
+
+      btn.textContent = lang === 'sv' ? 'Skickat! ✓' : 'Sent! ✓';
+      btn.style.background = '#1a6b40';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = origHtml;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
