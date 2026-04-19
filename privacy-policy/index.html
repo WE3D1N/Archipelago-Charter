@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P8XMDR33');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Integritetspolicy för Archipelago Charter Service — hur vi hanterar dina personuppgifter i enlighet med GDPR.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#000a1e">
+  <title>Integritetspolicy — Archipelago Charter Service</title>
+
+  <link rel="canonical" href="https://www.archipelagocharter.se/privacy-policy/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/brand_assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary:        #000a1e;
+      --primary-cont:   #1a6bc7;
+      --secondary:      #9b4500;
+      --secondary-cont: #fc8a40;
+      --surface:        #f8f9fa;
+      --surface-low:    #f3f4f5;
+      --surface-lowest: #ffffff;
+      --on-surface:     #0d1b2a;
+      --on-surface-var: #3e4f62;
+      --radius-lg:      1rem;
+      --radius-xl:      1.5rem;
+      --shadow-float:   0 24px 64px rgba(0, 10, 30, 0.14);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--surface);
+      color: var(--on-surface);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3.5rem;
+      background: rgba(0, 10, 30, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      background: rgba(255,255,255,0.92);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+    }
+    .nav-logo img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: #fff; }
+    .nav-back svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+    .nav-back:hover svg { transform: translateX(-3px); }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      min-height: 100vh;
+      padding-top: 5rem;
+    }
+
+    /* ── HEADER BAND ── */
+    .page-header {
+      background: var(--primary);
+      padding: 5rem 3.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(26,107,199,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(155,69,0,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .page-eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary-cont);
+      margin-bottom: 1.25rem;
+    }
+
+    .page-title {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .page-meta {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 400;
+    }
+
+    /* ── CONTENT ── */
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 3.5rem 6rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 2.5rem;
+      height: 2px;
+      background: var(--secondary-cont);
+      border-radius: 2px;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--on-surface-var);
+      margin-bottom: 0.875rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      margin: 0.5rem 0 0.875rem 1.25rem;
+    }
+
+    li {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--on-surface-var);
+      margin-bottom: 0.25rem;
+    }
+
+    a {
+      color: var(--primary-cont);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    a:hover { color: var(--secondary); }
+
+    strong {
+      color: var(--on-surface);
+      font-weight: 600;
+    }
+
+    /* ── CONTACT BLOCK ── */
+    .contact-block {
+      background: var(--primary);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      margin-top: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-block::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 100% 50%, rgba(26,107,199,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-block h2 {
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-block h2::after {
+      background: var(--secondary-cont);
+    }
+
+    .contact-block p {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .contact-block a {
+      color: var(--secondary-cont);
+    }
+
+    .contact-block a:hover {
+      color: #fff;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--primary);
+      padding: 2rem 3.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer p {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.35);
+      margin: 0;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav { padding: 1rem 1.5rem; }
+      .page-header { padding: 4rem 1.5rem 3rem; }
+      .content-wrap { padding: 3rem 1.5rem 5rem; }
+      .footer { padding: 1.5rem; }
+      .contact-block { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8XMDR33"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="nav">
+    <a href="/" class="nav-logo" aria-label="Archipelago Charter Service — tillbaka till startsidan">
+      <img src="/brand_assets/logo.jpg" alt="Archipelago Charter Service">
+    </a>
+    <a href="/" class="nav-back" aria-label="Tillbaka till startsidan">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10 3L5 8l5 5"/>
+      </svg>
+      Tillbaka
+    </a>
+  </header>
+
+  <div class="page">
+    <div class="page-header">
+      <div class="page-header-inner">
+        <p class="page-eyebrow">Juridisk information</p>
+        <h1 class="page-title">Integritetspolicy<br><em>&amp; Cookiepolicy</em></h1>
+        <p class="page-meta">Senast uppdaterad: 19 april 2026 &nbsp;·&nbsp; Gäller för archipelagocharter.se</p>
+      </div>
+    </div>
+
+    <main class="content-wrap">
+
+      <div class="section">
+        <h2>1. Personuppgiftsansvarig</h2>
+        <p>
+          <strong>Archipelago Charter Service</strong> (nedan "vi", "oss" eller "bolaget") är personuppgiftsansvarig för behandlingen av de personuppgifter som samlas in via denna webbplats.
+        </p>
+        <p>
+          Kontaktuppgifter:<br>
+          E-post: <a href="mailto:Mikael@onsea.se">Mikael@onsea.se</a><br>
+          Telefon: <a href="tel:+46708774771">+46 70 877 47 71</a><br>
+          Adress: Strandvägen Kajplats 19, Stockholm
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>2. Vilka uppgifter samlar vi in?</h2>
+        <p>Vi samlar in personuppgifter i följande situationer:</p>
+        <ul>
+          <li><strong>Kontaktformulär:</strong> Namn, e-postadress, telefonnummer och meddelande när du tar kontakt med oss för bokning eller frågor.</li>
+          <li><strong>Webbanalys (via Google Tag Manager / GA4):</strong> Anonymiserad besökardata såsom sidvisningar, ungefärlig plats (land/stad), enhet och trafikkälla. Inga direkt identifierbara uppgifter samlas in utan ditt samtycke.</li>
+          <li><strong>Beteendeanalys (Microsoft Clarity / Hotjar):</strong> Aggregerade heatmaps och sessionsdata i anonymiserad form, för att förstå hur webbplatsen används.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>3. Rättslig grund för behandlingen</h2>
+        <p>Vi behandlar dina personuppgifter med stöd av följande rättsliga grunder enligt GDPR art. 6:</p>
+        <ul>
+          <li><strong>Samtycke (art. 6.1 a):</strong> För analys- och marknadsföringscookies när du aktivt godkänner via vår cookie-banner.</li>
+          <li><strong>Berättigat intresse (art. 6.1 f):</strong> För grundläggande webbanalys och för att besvara förfrågningar om tjänster.</li>
+          <li><strong>Fullgörande av avtal (art. 6.1 b):</strong> Om du bokar en tjänst behandlar vi dina uppgifter för att kunna leverera den.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>4. Cookies och spårning</h2>
+        <p>Vi använder cookies och liknande tekniker för att webbplatsen ska fungera korrekt och för att förbättra din upplevelse. Cookies hanteras via <strong>Google Tag Manager</strong>.</p>
+        <p><strong>Nödvändiga cookies</strong> (alltid aktiva):</p>
+        <ul>
+          <li>Sessionshantering och säkerhet — ingen tracking.</li>
+        </ul>
+        <p><strong>Analys- och statistikcookies</strong> (kräver samtycke):</p>
+        <ul>
+          <li><em>Google Analytics 4</em> — mäter trafik och användarbeteende i anonymiserad form. Data lagras på Googles servrar inom EU/EEA (vid aktivering av dataregion EU) eller USA under EU-US Data Privacy Framework.</li>
+          <li><em>Microsoft Clarity / Hotjar</em> — aggregerade heatmaps och scrolldjup. Inga enskilda användare identifieras.</li>
+        </ul>
+        <p>Du kan när som helst återkalla ditt samtycke eller hantera cookies via din webbläsares inställningar.</p>
+      </div>
+
+      <div class="section">
+        <h2>5. Google Search Console</h2>
+        <p>Vi använder Google Search Console för att följa webbplatsens synlighet i Googles sökresultat. Search Console behandlar inga personuppgifter om enskilda besökare — enbart aggregerad sökstatistik kopplad till vår domän.</p>
+      </div>
+
+      <div class="section">
+        <h2>6. Lagring och överföring</h2>
+        <p>Vi strävar efter att lagra och behandla personuppgifter inom EU/EEA. När tredjepartstjänster (t.ex. Google) för över data till länder utanför EU sker det med stöd av EU-kommissionens standardavtalsklausuler (SCC) eller giltiga adequacy decisions.</p>
+        <p>Uppgifter i kontaktformulär sparas inte längre än 24 månader eller tills du begär radering.</p>
+      </div>
+
+      <div class="section">
+        <h2>7. Dina rättigheter</h2>
+        <p>Enligt GDPR har du rätt att:</p>
+        <ul>
+          <li><strong>Begära tillgång</strong> till de personuppgifter vi har om dig.</li>
+          <li><strong>Begära rättelse</strong> av felaktiga uppgifter.</li>
+          <li><strong>Begära radering</strong> ("rätten att bli bortglömd") under vissa förutsättningar.</li>
+          <li><strong>Invända</strong> mot viss behandling, t.ex. direktmarknadsföring.</li>
+          <li><strong>Begära dataportabilitet</strong> — att få ut dina uppgifter i ett maskinläsbart format.</li>
+          <li><strong>Återkalla samtycke</strong> när som helst, utan att det påverkar lagligheten av behandling som skett dessförinnan.</li>
+        </ul>
+        <p>För att utöva dina rättigheter, kontakta oss via e-post eller telefon nedan. Vi besvarar din begäran utan onödigt dröjsmål och senast inom 30 dagar.</p>
+      </div>
+
+      <div class="section">
+        <h2>8. Klagomål</h2>
+        <p>Om du anser att vi behandlar dina personuppgifter på ett felaktigt sätt har du rätt att lämna klagomål till tillsynsmyndigheten:</p>
+        <p>
+          <strong>Integritetsskyddsmyndigheten (IMY)</strong><br>
+          Box 8114, 104 20 Stockholm<br>
+          <a href="https://www.imy.se" target="_blank" rel="noopener noreferrer">www.imy.se</a>
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>9. Ändringar i policyn</h2>
+        <p>Vi kan uppdatera denna integritetspolicy vid behov. Väsentliga ändringar kommuniceras tydligt på webbplatsen. Det datum policyn senast uppdaterades framgår alltid längst upp på denna sida.</p>
+      </div>
+
+      <div class="contact-block">
+        <h2>Kontakta oss</h2>
+        <p>Frågor om denna policy eller hur vi hanterar dina uppgifter? Hör av dig direkt till kapten Mikael.</p>
+        <p style="margin-top:1rem;">
+          <a href="mailto:Mikael@onsea.se">Mikael@onsea.se</a>
+          &nbsp;·&nbsp;
+          <a href="tel:+46708774771">+46 70 877 47 71</a>
+        </p>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Archipelago Charter Service &nbsp;·&nbsp; <a href="/privacy-policy/">Integritetspolicy</a> &nbsp;·&nbsp; Strandvägen Kajplats 19, Stockholm</p>
+    </footer>
+  </div>
+
+  <script src="/cookie-consent.js"></script>
+</body>
+</html>

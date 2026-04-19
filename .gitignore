@@ -3,3 +3,9 @@ temporary screenshots/
 node_modules/
 CLAUDE.md
 Archapelago-info
+LAUNCH_PLAN.md
+brand_assets/DESIGN.md
+.env
+.env.local
+.env.production
+.env.*.local
