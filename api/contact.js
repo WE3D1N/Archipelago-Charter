@@ -36,7 +36,7 @@ export default async function handler(req, res) {
   try {
     await resend.emails.send({
       from: 'Archipelago Charter <mail@mail.rivercat.se>',
-      to: 'Mikael@onsea.se',
+      to: 'alexander.wedin@rivercat.se',
       replyTo: email,
       subject: `Ny bokningsförfrågan — ${escape(firstname)} ${escape(lastname)}`,
       html: `
