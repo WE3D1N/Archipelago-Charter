@@ -17,4 +17,68 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/hyra-bat-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/hyra-bat-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/rent-boat-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/hyra-bat-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/en/rent-boat-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/hyra-bat-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/rent-boat-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/hyra-bat-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/batcharter-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/batcharter-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/boat-charter-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/batcharter-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/en/boat-charter-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/batcharter-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/boat-charter-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/batcharter-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/foretagsevent-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/foretagsevent-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/corporate-events-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/foretagsevent-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/en/corporate-events-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/foretagsevent-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/corporate-events-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/foretagsevent-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/battransporter-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/battransporter-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/boat-transfers-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/battransporter-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.archipelagocharter.se/en/boat-transfers-stockholm/</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.archipelagocharter.se/battransporter-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.archipelagocharter.se/en/boat-transfers-stockholm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.archipelagocharter.se/battransporter-stockholm/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -203,6 +203,18 @@
       transform: translateY(-1px);
     }
 
+    .nav-center { display: flex; align-items: center; }
+    .nav-services { position: relative; }
+    .nav-services-btn { background: none; border: none; cursor: pointer; font-family: 'Manrope', sans-serif; font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.7); padding: 0.5rem 0.875rem; border-radius: var(--radius-pill); transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 0.375rem; white-space: nowrap; }
+    .nav-services-btn:hover, .nav-services:hover .nav-services-btn { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-services-btn svg { transition: transform 0.2s; flex-shrink: 0; }
+    .nav-services:hover .nav-services-btn svg { transform: rotate(180deg); }
+    .services-dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+    .services-dropdown { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(-6px); background: rgba(0,10,30,0.97); border-radius: var(--radius-lg); padding: 0.5rem; min-width: 260px; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; box-shadow: var(--shadow-float); border: 1px solid rgba(255,255,255,0.07); }
+    .nav-services:hover .services-dropdown { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .services-dropdown a { display: block; padding: 0.625rem 1rem; color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.875rem; font-weight: 500; border-radius: 0.5rem; transition: background 0.15s, color 0.15s; }
+    .services-dropdown a:hover { background: rgba(255,255,255,0.07); color: #fff; }
+
     /* ─────────────────────────────────────────
        HERO
     ───────────────────────────────────────── */
@@ -868,6 +880,7 @@
 
     @media (max-width: 900px) {
       .nav { padding: 0.875rem 1.5rem; }
+      .nav-center { display: none; }
 
       .hero-body { padding: 0 1.75rem 4rem; }
 
@@ -926,6 +939,22 @@
     <a href="#" class="nav-logo" aria-label="Archipelago Charter Service">
       <img src="brand_assets/logo.jpg" alt="Archipelago Charter Service">
     </a>
+    <nav class="nav-center" aria-label="Tjänster">
+      <div class="nav-services">
+        <button class="nav-services-btn" aria-haspopup="true">
+          Tjänster
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="services-dropdown" role="menu">
+          <a href="/hyra-bat-stockholm/" role="menuitem">Hyra Båt i Stockholm</a>
+          <a href="/batcharter-stockholm/" role="menuitem">Båtcharter Stockholm</a>
+          <a href="/foretagsevent-stockholm/" role="menuitem">Företagsevent</a>
+          <a href="/battransporter-stockholm/" role="menuitem">Båttransporter</a>
+        </div>
+      </div>
+    </nav>
     <div class="nav-right">
       <div class="lang-pill" role="group" aria-label="Välj språk">
         <a href="/" class="active" aria-label="Svenska" aria-current="page">SV</a>

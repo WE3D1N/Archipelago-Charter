@@ -23,15 +23,27 @@ const mimeTypes = {
 };
 
 http.createServer((req, res) => {
-  let urlPath = req.url === '/' ? '/index.html' : req.url;
+  let urlPath = req.url.split('?')[0];
+  if (urlPath.endsWith('/')) {
+    urlPath += 'index.html';
+  }
   const filePath = path.join(__dirname, urlPath);
   const ext = path.extname(filePath);
   const contentType = mimeTypes[ext] || 'application/octet-stream';
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      res.writeHead(404);
-      res.end('Not found');
+      // Try appending /index.html for extensionless paths
+      const indexPath = path.join(__dirname, urlPath, 'index.html');
+      fs.readFile(indexPath, (err2, data2) => {
+        if (err2) {
+          res.writeHead(404);
+          res.end('Not found');
+          return;
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(data2);
+      });
       return;
     }
     res.writeHead(200, { 'Content-Type': contentType });
